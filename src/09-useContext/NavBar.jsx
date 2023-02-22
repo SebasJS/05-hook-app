@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
   return (
@@ -8,13 +8,13 @@ export const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <NavLink
-              className={( { isActive } ) => `nav-link ${ isActive ? 'active' : '' } `}
+              className={({ isActive }) => `nav-link ${ isActive ? 'active' : '' } `}
               to="/"
             >
               Home
             </NavLink>
             <NavLink
-              className={( { isActive } ) => `nav-link ${ isActive ? 'active' : '' } `}
+              className={({ isActive }) => `nav-link ${ isActive ? 'active' : '' } `}
               to="/about"
             >
               About

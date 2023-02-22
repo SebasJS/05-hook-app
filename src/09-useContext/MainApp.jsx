@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom"
-import { UserProvider } from "./context/UserProvider"
-import { NavBar } from "./NavBar"
+import { Outlet } from 'react-router-dom'
+import { UserProvider } from './context/UserProvider'
+import { NavBar } from './NavBar'
 
 export const MainApp = () => {
-  return(
+  return (
     <UserProvider>
       <NavBar />
       <hr />
