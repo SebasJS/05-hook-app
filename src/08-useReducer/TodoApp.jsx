@@ -1,9 +1,8 @@
-import { TodoAdd } from "../components/TodoAdd"
-import { TodoList } from "../components/TodoList"
-import { useTodos } from "../hooks/useTodos"
+import { TodoAdd } from '../components/TodoAdd'
+import { TodoList } from '../components/TodoList'
+import { useTodos } from '../hooks/useTodos'
 
 export const TodoApp = () => {
-
   const { todo, todosCount, pendingTodos, handleNewTodo, handleRemoveTodo, handleToggleClick } = useTodos()
 
   return (
@@ -12,8 +11,8 @@ export const TodoApp = () => {
       <hr />
       <div className="row">
         <div className="col-7">
-          <TodoList 
-            todo = { todo } 
+          <TodoList
+            todo = { todo }
             onRemoveTodo = { handleRemoveTodo }
             onToggleClick = { handleToggleClick }
           />
@@ -21,11 +20,11 @@ export const TodoApp = () => {
         <div className="col-5">
           <h4>Agregar TODO</h4>
           <hr />
-          <TodoAdd 
-            onNewTodo = { handleNewTodo } 
+          <TodoAdd
+            onNewTodo = { handleNewTodo }
           />
         </div>
       </div>
     </>
-  ) 
+  )
 }
