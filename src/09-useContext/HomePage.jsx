@@ -1,16 +1,14 @@
-import { useContext } from "react"
-import { UserContext } from "./context/UserContext"
-
+import { useContext } from 'react'
+import { UserContext } from './context/UserContext'
 
 export const HomePage = () => {
-  
-  const { user } = useContext( UserContext )
+  const { user } = useContext(UserContext)
 
-  return(
+  return (
     <>
-      <h1>HomePage { user?.name } </h1>
+      <h1 aria-label='h1-name'>HomePage { user?.name } </h1>
       <hr />
-      <pre>
+      <pre aria-label='pre'>
         { JSON.stringify(user, null, 3) }
       </pre>
     </>

@@ -13,6 +13,7 @@ export const TodoItem = ({ todo, onRemoveTodo, onToggleClick }) => {
         <button
           className="btn btn-danger"
           onClick={ () => onRemoveTodo(todo.id) }
+          aria-label='button'
           >
             Borrar</button>
       </li>

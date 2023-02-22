@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { TodoItem } from '../../src/components/TodoItem'
 
 describe('Pruebas en componente TodoItem', () => {
@@ -25,10 +25,35 @@ describe('Pruebas en componente TodoItem', () => {
       />
     )
 
-    const liElement = screen.getByRole('listitem')
-    expect(liElement.className).toBe('list-group-item d-flex justify-content-between')
+    const spanElement = screen.getByLabelText('span')
+    expect(spanElement.className).toContain('align-self-center ')
+  })
+
+  test('debe llamar el ToggleTodo con el argumento', () => {
+    render(
+      <TodoItem
+        todo={ todo }
+        onRemoveTodo={ onRemoveTodoMock }
+        onToggleClick={ onToggleClickMock }
+      />
+    )
 
     const spanElement = screen.getByLabelText('span')
-    expect(spanElement.className).toBe('align-self-center ')
+    fireEvent.click(spanElement)
+    expect(onToggleClickMock).toHaveBeenCalledWith(todo.id)
+  })
+
+  test('debe llamar el RemoveTodo con el argumento', () => {
+    render(
+      <TodoItem
+        todo={ todo }
+        onRemoveTodo={ onRemoveTodoMock }
+        onToggleClick={ onToggleClickMock }
+      />
+    )
+
+    const buttonElement = screen.getByLabelText('button')
+    fireEvent.click(buttonElement)
+    expect(onRemoveTodoMock).toHaveBeenCalledWith(todo.id)
   })
 })
